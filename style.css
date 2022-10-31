@@ -4,9 +4,9 @@ img {
   }
   
   p {
-    color: blue;
+    color: black;
     font-weight: bold;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Georgia, 'Times New Roman', Times, serif;
   }
   
   iframe {
@@ -15,5 +15,16 @@ img {
   }
   
   body {
-    background-color: pink;
+    background-color: whitesmoke;
+  }
+
+  .search-wrapper {
+    display:flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  input{
+    font-size: 1rem;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
