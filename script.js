@@ -1,6 +1,7 @@
 const btn = document.getElementById("search_btn");
 let remove_list= [];
-btn.addEventListener("click", function () {
+btn.addEventListener("click", function (event) {
+    event.preventDefault();
     console.log(remove_list.length);
     for(let i of remove_list){
         i.remove();
