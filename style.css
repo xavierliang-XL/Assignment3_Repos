@@ -6,7 +6,7 @@ img {
   p {
     color: black;
     font-weight: bold;
-    font-family:Georgia, 'Times New Roman', Times, serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
   iframe {
@@ -16,12 +16,30 @@ img {
   
   body {
     background-color: whitesmoke;
+  } 
+
+#searchbar{
+  width: 100vw;
+  height: 5vw;
+}
+
+  select{
+    border-radius: 20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  .search-wrapper {
-    display:flex;
-    flex-direction: column;
-    gap: .25rem;
+  button{
+    background-image: linear-gradient(to right, lightgreen, skyblue);
+    border-radius: 20px;
+    border:0px;
+    width:50px;
+    height:20px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  button:hover{
+    background-image: linear-gradient(to right, green, blue);
+    color:white;
   }
 
   input{
