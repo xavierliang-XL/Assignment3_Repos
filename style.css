@@ -10,7 +10,8 @@
   color:white;
   text-align: center;
   font-size:100px;
-  margin:0;
+  margin:auto;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .images{
@@ -26,13 +27,20 @@
   border-radius:20px;
 }
 
-  p {
+.intro {
+    border-radius: 20px;
+    height:500px;
+    float:left;
+    background-image: linear-gradient(to right, lightgreen, skyblue);
+    opacity:0.9;
+    width: 380px;
     color: black;
-    font-weight: bold;
+    padding:10px;
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
   img {
+    float:right;
     border-radius:40px;
     width: 400px;
     height: 600px;

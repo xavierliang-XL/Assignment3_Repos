@@ -25,9 +25,9 @@ btn.addEventListener("click", function (event) {
                 append_to_response: "videos",
             }
         }).then((movieData) => {
-            const img = document.createElement('img');
             const p = document.createElement('p');
             const iframe = document.createElement('iframe');
+            const img = document.createElement('img');
             console.log(movie);
             remove_list.push(p,iframe,img);
             const trailers = movieData.data.videos.results.filter((trailer) => trailer.type === "Trailer");
@@ -38,11 +38,14 @@ btn.addEventListener("click", function (event) {
                   return;
                 }
                 img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
-                p.innerHTML = `<br> ${movie.id}: ${movie.title} -- ${movie.release_date}  
+                p.classList.add("intro");
+                p.innerHTML = `<br> ID: ${movie.id}
+                <br> Title - ${movie.title}
+                <br> Release Date: ${movie.release_date}  
                 <br> Popularity: ${movie.popularity}
                 <br> Original Language: ${movie.original_language}
                 <br> Vote Count: ${movie.vote_count}
-                <br> Adult: ${movie.adult}
+                <br> Adult: ${movie.adult} </br>
                 <br> Overview: ${movie.overview}`;
                 
                 document.body.append(p,img,iframe);
