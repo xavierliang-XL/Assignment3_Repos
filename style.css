@@ -39,11 +39,19 @@
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
 
-  img {
+  .image {
     float:right;
     border-radius:40px;
     width: 400px;
     height: 600px;
+  }
+
+  .una{
+    border-radius:20px;
+    height: 600px;
+    width: 1067px;
+    border:0;
+    margin-left:10px;
   }
   
   iframe {

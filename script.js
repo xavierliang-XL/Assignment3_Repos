@@ -26,30 +26,38 @@ btn.addEventListener("click", function (event) {
             }
         }).then((movieData) => {
             const p = document.createElement('p');
-            const iframe = document.createElement('iframe');
+            let iframe = document.createElement('iframe');
             const img = document.createElement('img');
             console.log(movie);
-            remove_list.push(p,iframe,img);
             const trailers = movieData.data.videos.results.filter((trailer) => trailer.type === "Trailer");
+            let includedTrailer=true;
             try{
                 iframe.src = `https://www.youtube.com/embed/${trailers.at(0).key}`
-          
-                }catch(err){
-                  return;
-                }
                 img.src = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+          
+            }catch(err){
+                iframe = document.createElement('img');
+                iframe.classList.add("una");
+                iframe.src = "img/youtube-error.webp";
+                includedTrailer=false;
+            }finally{
+                img.classList.add("image");
                 p.classList.add("intro");
                 p.innerHTML = `<br> ID: ${movie.id}
                 <br> Title - ${movie.title}
+                <br> Original Title - ${movie.original_title}
                 <br> Release Date: ${movie.release_date}  
                 <br> Popularity: ${movie.popularity}
                 <br> Original Language: ${movie.original_language}
                 <br> Vote Count: ${movie.vote_count}
+                <br> Vote Average: ${movie.vote_average}
+                <br> Included Trailer: ${includedTrailer}
                 <br> Adult: ${movie.adult} </br>
                 <br> Overview: ${movie.overview}`;
-                
+                remove_list.push(p,iframe,img);
                 document.body.append(p,img,iframe);
-              });
+            }
+            });
         }
     });
 });
